@@ -15,7 +15,7 @@
     </queries>
     <application
         android:enableOnBackInvokedCallback="true"
-        android:label="firman"
+        android:label="Alkitab Online"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity
