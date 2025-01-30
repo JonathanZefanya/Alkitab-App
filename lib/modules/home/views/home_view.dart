@@ -595,7 +595,7 @@ class HomeView extends GetView<HomeController> {
               ),
               SizedBox(height: 20.h),
               Text(
-                "Pilih kitab dan ayat 😍",
+                "Pilih kitab dan ayat 📖",
                 style: StyleApp.styleBold(18.sp, StyleApp.black),
               ),
               SizedBox(height: 20.h),

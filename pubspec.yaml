@@ -33,6 +33,7 @@ dependencies:
   path: ^1.9.0
   google_generative_ai: ^0.4.3
   url_launcher: ^6.3.1
+  flutter_launcher_icons: ^0.14.3
 
 dev_dependencies:
   flutter_test:
@@ -58,6 +59,10 @@ flutter:
     - family: rbbold
       fonts:
         - asset: assets/fonts/rbbold.ttf
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/img/logo.png"
 
 flutter_native_splash:
   # This package generates native code to customize Flutter's default white native splash screen
@@ -83,7 +88,7 @@ flutter_native_splash:
 
   # The image parameter allows you to specify an image used in the splash screen.  It must be a
   # png file and should be sized for 4x pixel density.
-  image: assets/img/splash.png
+  image: assets/img/logo.png
 
   # The branding property allows you to specify an image used as branding in the splash screen.
   # It must be a png file. It is supported for Android, iOS and the Web.  For Android 12,
@@ -115,7 +120,7 @@ flutter_native_splash:
     # 640 pixels in diameter.
     # App icon without an icon background: This should be 1152×1152 pixels, and fit within a circle
     # 768 pixels in diameter.
-    image: assets/img/splash.png
+    image: assets/img/logo.png
 
     # Splash screen background color.
     color: "#FFFFFF"

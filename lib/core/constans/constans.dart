@@ -5,9 +5,9 @@ class Constans {
   static const INIT_LAST_VERSE = 1;
 
   static const PREF_FIRST_TIME = 'pref_first_time';
-  static const APPNAME = 'Firman Hidup';
+  static const APPNAME = 'Alkitab Online';
   static const TXT_ONBOARDING =
-      'Rumput menjadi kering, bunga menjadi layu, tetapi firman Allah kita tetap untuk selama-lamanya';
+      'Rumput menjadi kering, bunga menjadi layu, tetapi firman Allah kita tetap untuk selama-lamanya\n';
   static const TXT_SUBTITLE_HEADER =
       'Jika Tuhan dipihakku, siapakah yang akan melawan aku?';
 
