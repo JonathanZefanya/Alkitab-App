@@ -33,7 +33,7 @@ class HomeView extends GetView<HomeController> {
                   ),
                   subtitle: Text(
                     Constans.TXT_SUBTITLE_HEADER,
-                    style: StyleApp.styleMed(11.sp, StyleApp.black),
+                    style: StyleApp.styleMed(16.sp, StyleApp.black),
                   ),
                   trailing: IconButton(
                     onPressed: () {
@@ -109,11 +109,11 @@ class HomeView extends GetView<HomeController> {
                       },
                       child: controller.isDeveloperButtonClicked.value
                           ? Icon(
-                              Icons.person,
+                              Icons.person_outline,
                               color: StyleApp.primary,
                             )
                           : Icon(
-                              Icons.person,
+                              Icons.person_outline,
                               color: StyleApp.black,
                             ),
                     ),
@@ -410,6 +410,161 @@ class HomeView extends GetView<HomeController> {
     );
   }
 
+  // Container bottomSheetVerse(HomeController controller) {
+  //   return Container(
+  //     width: double.infinity,
+  //     decoration: BoxDecoration(
+  //       color: StyleApp.white,
+  //       borderRadius: BorderRadius.only(
+  //         topLeft: Radius.circular(20.w),
+  //         topRight: Radius.circular(20.w),
+  //       ),
+  //     ),
+  //     child: Padding(
+  //       padding: EdgeInsets.all(20.w),
+  //       child: SingleChildScrollView(
+  //         child: Expanded(
+  //             child: Column(
+  //           mainAxisAlignment: MainAxisAlignment.start,
+  //           crossAxisAlignment: CrossAxisAlignment.start,
+  //           children: [
+  //             Center(
+  //               child: ClipRRect(
+  //                 borderRadius: BorderRadius.circular(10.w),
+  //                 child: Container(
+  //                   width: 50.w,
+  //                   height: 6.h,
+  //                   decoration: BoxDecoration(color: Colors.grey[100]),
+  //                 ),
+  //               ),
+  //             ),
+  //             SizedBox(
+  //               height: 20.h,
+  //             ),
+  //             Row(
+  //               mainAxisAlignment: MainAxisAlignment.end,
+  //               crossAxisAlignment: CrossAxisAlignment.end,
+  //               children: [
+  //                 SizedBox(
+  //                   width: 20.w,
+  //                 ),
+  //                 Obx(
+  //                   () => IconButton(
+  //                     onPressed: () {
+  //                       controller.validateDataSavedVerse();
+  //                     },
+  //                     icon: Icon(
+  //                       controller.isVerseSaved.value
+  //                           ? Icons.check
+  //                           : Icons.bookmark_add_outlined,
+  //                       color: StyleApp.black,
+  //                     ),
+  //                     style: ButtonStyle(
+  //                       backgroundColor:
+  //                           WidgetStatePropertyAll(StyleApp.banner),
+  //                     ),
+  //                   ),
+  //                 ),
+  //                 Obx(
+  //                   () => IconButton(
+  //                     onPressed: () {
+  //                       if (controller.isPlaying.value != true) {
+  //                         controller.voiceSpeak();
+  //                       } else {
+  //                         controller.voiceStop();
+  //                       }
+  //                     },
+  //                     icon: Icon(
+  //                       controller.isPlaying.value
+  //                           ? Icons.stop
+  //                           : Icons.play_arrow_outlined,
+  //                       color: StyleApp.white,
+  //                     ),
+  //                     style: ButtonStyle(
+  //                       backgroundColor:
+  //                           WidgetStatePropertyAll(StyleApp.primary),
+  //                     ),
+  //                   ),
+  //                 ),
+  //               ],
+  //             ),
+  //             SizedBox(
+  //               height: 10.h,
+  //             ),
+  //             Text(
+  //               controller.abbrSelected.toString(),
+  //               style: StyleApp.styleMed(
+  //                 controller.titleSize.value,
+  //                 StyleApp.black,
+  //               ),
+  //             ),
+  //             SizedBox(
+  //               height: 8.h,
+  //             ),
+  //             Text(
+  //               controller.verseSelected.value.toString(),
+  //               style: StyleApp.styleReg(
+  //                 controller.textSize.value,
+  //                 StyleApp.black,
+  //               ),
+  //             ),
+  //             SizedBox(
+  //               height: 8.h,
+  //             ),
+  //             Obx(
+  //               () => controller.isLoadingAi.value
+  //                   ? VerseShimmer()
+  //                   : controller.aiResult.value != ""
+  //                       ? Column(
+  //                           mainAxisAlignment: MainAxisAlignment.start,
+  //                           crossAxisAlignment: CrossAxisAlignment.start,
+  //                           children: [
+  //                             SizedBox(
+  //                               height: 8.h,
+  //                             ),
+  //                             Text(
+  //                               "Penjelasan Ayat:",
+  //                               style: StyleApp.styleMed(
+  //                                 controller.textSize.value,
+  //                                 StyleApp.black,
+  //                               ),
+  //                             ),
+  //                             Text(
+  //                               controller.aiResult.toString(),
+  //                               style: StyleApp.styleReg(
+  //                                 controller.textSize.value,
+  //                                 StyleApp.black,
+  //                               ),
+  //                             )
+  //                           ],
+  //                         )
+  //                       : TextButton(
+  //                           onPressed: () async {
+  //                             if (controller.abbrSelected.value == "") {
+  //                               Get.snackbar("Error", "Ayat tidak ditemukan");
+  //                               return;
+  //                             }
+
+  //                             await controller.prompToAI(
+  //                                 '${Constans.PROMPT_AI} ${controller.abbrSelected}');
+  //                           },
+  //                           style: ButtonStyle(
+  //                               backgroundColor:
+  //                                   WidgetStatePropertyAll(StyleApp.primary)),
+  //                           child: Text(
+  //                             "Lihat penjelasan",
+  //                             style: StyleApp.styleMed(
+  //                                 controller.textSize.value, StyleApp.white),
+  //                           ),
+  //                         ),
+  //             ),
+  //           ],
+  //         )),
+  //       ),
+  //     ),
+  //   );
+  // }
+
   Container bottomSheetVerse(HomeController controller) {
     return Container(
       width: double.infinity,
@@ -423,8 +578,7 @@ class HomeView extends GetView<HomeController> {
       child: Padding(
         padding: EdgeInsets.all(20.w),
         child: SingleChildScrollView(
-          child: Expanded(
-              child: Column(
+          child: Column( // 🚀 Hapus Expanded dan langsung gunakan Column
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -438,59 +592,45 @@ class HomeView extends GetView<HomeController> {
                   ),
                 ),
               ),
-              SizedBox(
-                height: 20.h,
-              ),
+              SizedBox(height: 20.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  SizedBox(
-                    width: 20.w,
-                  ),
-                  Obx(
-                    () => IconButton(
-                      onPressed: () {
-                        controller.validateDataSavedVerse();
-                      },
-                      icon: Icon(
-                        controller.isVerseSaved.value
-                            ? Icons.check
-                            : Icons.bookmark_add_outlined,
-                        color: StyleApp.black,
-                      ),
-                      style: ButtonStyle(
-                        backgroundColor:
-                            WidgetStatePropertyAll(StyleApp.banner),
-                      ),
-                    ),
-                  ),
-                  Obx(
-                    () => IconButton(
-                      onPressed: () {
-                        if (controller.isPlaying.value != true) {
-                          controller.voiceSpeak();
-                        } else {
-                          controller.voiceStop();
-                        }
-                      },
-                      icon: Icon(
-                        controller.isPlaying.value
-                            ? Icons.stop
-                            : Icons.play_arrow_outlined,
-                        color: StyleApp.white,
-                      ),
-                      style: ButtonStyle(
-                        backgroundColor:
-                            WidgetStatePropertyAll(StyleApp.primary),
-                      ),
-                    ),
-                  ),
+                  SizedBox(width: 20.w),
+                  Obx(() => IconButton(
+                        onPressed: () {
+                          controller.validateDataSavedVerse();
+                        },
+                        icon: Icon(
+                          controller.isVerseSaved.value
+                              ? Icons.check
+                              : Icons.bookmark_add_outlined,
+                          color: StyleApp.black,
+                        ),
+                        style: ButtonStyle(
+                          backgroundColor: WidgetStatePropertyAll(StyleApp.banner),
+                        ),
+                      )),
+                  Obx(() => IconButton(
+                        onPressed: () {
+                          if (!controller.isPlaying.value) {
+                            controller.voiceSpeak();
+                          } else {
+                            controller.voiceStop();
+                          }
+                        },
+                        icon: Icon(
+                          controller.isPlaying.value ? Icons.stop : Icons.play_arrow_outlined,
+                          color: StyleApp.white,
+                        ),
+                        style: ButtonStyle(
+                          backgroundColor: WidgetStatePropertyAll(StyleApp.primary),
+                        ),
+                      )),
                 ],
               ),
-              SizedBox(
-                height: 10.h,
-              ),
+              SizedBox(height: 10.h),
               Text(
                 controller.abbrSelected.toString(),
                 style: StyleApp.styleMed(
@@ -498,9 +638,7 @@ class HomeView extends GetView<HomeController> {
                   StyleApp.black,
                 ),
               ),
-              SizedBox(
-                height: 8.h,
-              ),
+              SizedBox(height: 8.h),
               Text(
                 controller.verseSelected.value.toString(),
                 style: StyleApp.styleReg(
@@ -508,62 +646,56 @@ class HomeView extends GetView<HomeController> {
                   StyleApp.black,
                 ),
               ),
-              SizedBox(
-                height: 8.h,
-              ),
-              Obx(
-                () => controller.isLoadingAi.value
-                    ? VerseShimmer()
-                    : controller.aiResult.value != ""
-                        ? Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                height: 8.h,
-                              ),
-                              Text(
-                                "Penjelasan Ayat:",
-                                style: StyleApp.styleMed(
-                                  controller.textSize.value,
-                                  StyleApp.black,
-                                ),
-                              ),
-                              Text(
-                                controller.aiResult.toString(),
-                                style: StyleApp.styleReg(
-                                  controller.textSize.value,
-                                  StyleApp.black,
-                                ),
-                              )
-                            ],
-                          )
-                        : TextButton(
-                            onPressed: () async {
-                              if (controller.abbrSelected.value == "") {
-                                Get.snackbar("Error", "Ayat tidak ditemukan");
-                                return;
-                              }
-
-                              await controller.prompToAI(
-                                  '${Constans.PROMPT_AI} ${controller.abbrSelected}');
-                            },
-                            style: ButtonStyle(
-                                backgroundColor:
-                                    WidgetStatePropertyAll(StyleApp.primary)),
-                            child: Text(
-                              "Lihat penjelasan",
+              SizedBox(height: 8.h),
+              Obx(() => controller.isLoadingAi.value
+                  ? VerseShimmer()
+                  : controller.aiResult.value.isNotEmpty
+                      ? Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(height: 8.h),
+                            Text(
+                              "Penjelasan Ayat:",
                               style: StyleApp.styleMed(
-                                  controller.textSize.value, StyleApp.white),
+                                controller.textSize.value,
+                                StyleApp.black,
+                              ),
                             ),
+                            Text(
+                              controller.aiResult.toString(),
+                              style: StyleApp.styleReg(
+                                controller.textSize.value,
+                                StyleApp.black,
+                              ),
+                            )
+                          ],
+                        )
+                      : TextButton(
+                          onPressed: () async {
+                            if (controller.abbrSelected.value.isEmpty) {
+                              Get.snackbar("Error", "Ayat tidak ditemukan");
+                              return;
+                            }
+                            await controller.prompToAI(
+                                '${Constans.PROMPT_AI} ${controller.abbrSelected}');
+                          },
+                          style: ButtonStyle(
+                            backgroundColor: WidgetStatePropertyAll(StyleApp.primary),
                           ),
-              ),
+                          child: Text(
+                            "Lihat penjelasan",
+                            style: StyleApp.styleMed(
+                                controller.textSize.value, StyleApp.white),
+                          ),
+                        )),
             ],
-          )),
+          ),
         ),
       ),
     );
   }
+
 
   ClipRRect searchBottomSheet(HomeController controller) {
     return ClipRRect(

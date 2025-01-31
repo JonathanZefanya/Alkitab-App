@@ -103,26 +103,32 @@ class HomeController extends GetxController {
 
   Future<void> prompToAI(String text) async {
     isLoadingAi.value = true;
-    if (apiKey == "") {
+
+    if (apiKey.isEmpty) {
       Get.snackbar("Error", "Terjadi kesalahan");
       aiResult.value = "";
+      isLoadingAi.value = false; // ✅ Pastikan loading dihentikan
+      return;
     }
 
     try {
       final model = GenerativeModel(model: 'gemini-1.5-flash', apiKey: apiKey);
       final content = [Content.text(text)];
       final response = await model.generateContent(content);
-      isLoadingAi.value = false;
-      print(response.text);
+
+      // ✅ Tambahkan logging untuk memastikan respons dari API
+      print("Response AI: ${response.text}");
+
       aiResult.value = response.text ?? "";
     } catch (e) {
-      isLoadingAi.value = false;
-
+      print("Error AI: $e");
       Get.snackbar("Error", "Something went wrong");
-      print(e);
       aiResult.value = "";
+    } finally {
+      isLoadingAi.value = false; // ✅ Pastikan loading dihentikan di semua kondisi
     }
   }
+
 
   void initFontSize() {
     final abbrSize = userService.getDouble(Constans.PREF_SIZE_ABBR);
