@@ -1,6 +1,6 @@
 # 📖 Alkitab Online
 
-![Alkitab Online](https://github.com/JonathanZefanya/Alkitab-App/blob/master/assets/img/logo.png)
+![Alkitab Online](https://png.pngtree.com/png-vector/20220327/ourlarge/pngtree-the-open-bible-is-a-christian-forgiveness-verse-png-image_4513373.png)
 
 ## ✨ Fitur Utama
 
