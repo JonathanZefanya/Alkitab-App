@@ -1,12 +1,12 @@
 # 📖 Alkitab Online
 
-![Alkitab Online](https://png.pngtree.com/png-vector/20220327/ourlarge/pngtree-the-open-bible-is-a-christian-forgiveness-verse-png-image_4513373.png)
+![Alkitab Online](https://github.com/JonathanZefanya/Alkitab-App/blob/master/android/app/src/main/res/mipmap-xhdpi/launcher_icon.png)
 
 ## ✨ Fitur Utama
 
-✅ **Baca Alkitab** dengan mudah dari berbagai versi.
-✅ **AI Penjelas Ayat** untuk memahami makna ayat dengan bantuan kecerdasan buatan.
-✅ **Simpan Ayat Favorit** agar dapat diakses kembali kapan saja.
+✅ **Baca Alkitab** dengan mudah dari berbagai versi.<br>
+✅ **AI Penjelas Ayat** untuk memahami makna ayat dengan bantuan kecerdasan buatan. <br>
+✅ **Simpan Ayat Favorit** agar dapat diakses kembali kapan saja. <br>
 ✅ **Cari Ayat & Pasal** dengan cepat dan akurat.
 
 ---
