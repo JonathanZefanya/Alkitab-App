@@ -1,6 +1,6 @@
 # 📖 Alkitab Online
 
-![Alkitab Online](https://via.placeholder.com/800x300?text=Alkitab+Online)
+![Alkitab Online](https://github.com/JonathanZefanya/Alkitab-App/blob/master/assets/img/logo.png)
 
 ## ✨ Fitur Utama
 
